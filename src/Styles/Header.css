@@ -1,0 +1,147 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #000000e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0 1rem;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 35px;
+}
+
+.theme-select {
+  height: 30px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 5px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 1rem;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-link {
+  color: #fff;
+  margin-right: 1rem;
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid #fff;
+}
+
+/* Hamburger */
+.hamburger {
+  width: 25px;
+  height: 17px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.hamburger,
+.nav {
+  margin-right: 0.5rem;
+}
+/* Media query for small screen */
+@media (max-width: 500px) {
+  .hamburger,
+  .nav {
+    margin-right: 0;
+  }
+  .header {
+    padding: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    width: 50%;
+    height: 100vh;
+    flex-direction: column;
+    padding: 1rem;
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav-link {
+    margin: 0.5rem 0;
+  }
+}
+
+/* Always mobile-style for theme2 */
+.theme2-always-mobile .hamburger {
+  display: flex !important;
+}
+
+.theme2-always-mobile .nav {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #000;
+  width: 15%;
+  height: 100vh;
+  flex-direction: column;
+  padding: 1rem;
+  display: none;
+}
+
+.theme2-always-mobile .nav.open {
+  display: flex;
+}
+
+.theme2-always-mobile .nav-link {
+  margin: 0.5rem 0;
+}

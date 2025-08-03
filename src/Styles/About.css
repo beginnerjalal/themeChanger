@@ -1,0 +1,264 @@
+/* Root container */
+.about-page {
+  display: flex;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Hero Section */
+.about-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  /* margin-bottom: 3rem; */
+}
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 40%;
+}
+.hero-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 20%;
+  object-fit: cover;
+  border: 6px solid var(--primary-color);
+  padding: 0.5rem;
+}
+.hero-text {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-text h1 {
+  margin: 0 0 0.3rem 0;
+  font-size: 2.5rem;
+}
+
+.hero-text p {
+  margin: 0;
+  line-height: 1.6;
+  max-width: 550px;
+}
+
+/* Cards Grid */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 1.5rem;
+  /* margin-bottom: 3rem; */
+}
+.exp-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.contacts {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding-block: 15px;
+  margin-block: 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+}
+
+.card-btn {
+  background: var(--card-bg);
+  color: var(--card-text);
+  border: 1px solid var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.card-btn:hover {
+  transform: scale(1.05); /* zoom to 110% */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.card {
+  background: var(--card-bg);
+  color: var(--card-text);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  min-height: 160px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.card li span {
+  font-weight: 600;
+}
+
+/* Footer */
+.about-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Themes */
+.theme1 {
+  --primary-color: #007bff;
+  --card-bg: #ffffff;
+  --card-text: #333333;
+  background: #f9f9f9;
+  color: #333333;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.theme2 {
+  --primary-color: #ff4081;
+  --card-bg: #2b2b2b;
+  --card-text: #f0f0f0;
+  background: #121212;
+  color: #f0f0f0;
+  height: 100vh;
+  font-family: "Merriweather", serif;
+}
+
+.theme3 {
+  --primary-color: #00c0ff;
+  --card-bg: #fffae5;
+  --card-text: #202020;
+  color: #202020;
+  background: linear-gradient(135deg, #f6d365 0%, #fd6e6a 100%);
+  color: #333;
+  font: "'Pacifico', cursive";
+  height: 100vh;
+  font-family: "Pacifico", cursive;
+}
+
+.colorfull-card {
+  background: linear-gradient(
+    135deg,
+    var(--card-bg) 0%,
+    #fd6e6a 100%
+  ) !important;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 1550px) and (max-width: 2561px) {
+  .about-page {
+    justify-content: center;
+    flex-direction: column;
+    padding-inline: 5rem;
+  }
+  .profile-wrapper {
+    height: 100%;
+  }
+}
+@media (max-width: 1020px) {
+  .theme1,
+  .theme2,
+  .theme3 {
+    height: 100%;
+    padding-bottom: 2rem;
+  }
+}
+@media (max-width: 1024px) {
+  .hero-image img {
+    width: 220px;
+    height: 220px;
+  }
+  .about-page {
+    flex-direction: column;
+    padding-block: 5rem;
+    height: 100%;
+  }
+  .profile-wrapper {
+    flex-direction: row;
+    text-align: left;
+  }
+  .hero-image {
+    margin-right: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .exp-info {
+    padding-inline: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+    padding-inline: 5rem;
+  }
+  .exp-info {
+    margin-inline: 2rem;
+  }
+  .hero-text p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page {
+    padding: 2rem 1rem;
+  }
+  .about-hero {
+    padding-inline: 0rem;
+    padding-top: 3rem;
+  }
+  .profile-wrapper {
+    flex-direction: column;
+  }
+  .hero-image img {
+    width: 160px;
+    height: 160px;
+    border-width: 4px;
+  }
+  .hero-text {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+  .card li {
+    flex-direction: column;
+    gap: 0;
+  }
+  .exp-info {
+    margin-inline: 0rem;
+  }
+  .contacts {
+    flex-direction: column;
+    text-align: center;
+  }
+}
