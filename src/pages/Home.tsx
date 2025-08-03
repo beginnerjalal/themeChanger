@@ -3,7 +3,7 @@ import { ThemeContext } from "../context/ThemeContext";
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState<any[]>([]);
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   const [cardClassName, setCardClassName] = useState("colorfull-card");
 
   useEffect(() => {
